@@ -1,6 +1,6 @@
 <section data-ng-controller="HomeController">
 	<h1>{{ helloMessage }}</h1>
 	<div ng-repeat='user in users'>
-		<h3>{{ user.displayName }}</h3>
+		<a ng-href="#!/message/{{ user._id }}"><h3>{{ user.displayName }}</h3></a>
 	</div>
 </section>

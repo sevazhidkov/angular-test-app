@@ -13,3 +13,13 @@
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
 }
+
+input {
+	margin: 2%;
+	width: 200px;
+	height: 200px;
+}
+
+.new-message {
+	text-align: center;
+}
