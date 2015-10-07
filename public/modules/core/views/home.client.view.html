@@ -3,7 +3,7 @@
 	<div ng-if='authentication.user.messages'>
 	<h2>Ваши сообщения: </h2>
 	<ul>
-		<li ng-repeat='message in authentication.user.messages'>{{ message }}</li>
+		<li ng-repeat='message in authentication.user.messages'>{{ message.text }} - {{ message.from }}</li>
 	</ul>
   </div>
 	<div ng-repeat='user in users'>
