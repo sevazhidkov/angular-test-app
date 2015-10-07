@@ -6,7 +6,7 @@ angular.module('core').controller('MessageController', ['$scope', '$stateParams'
 			if ($scope.message.length > 0) {
 				$http.post('/users/sendMessage', { message: [$scope.message] })
 				       .success(function(response) {
-							   console.log(response);
+							   $scope.sended = true;
 							 })
 							 .error(function(error) {
 								 console.log(error);

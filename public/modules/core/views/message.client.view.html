@@ -1,5 +1,7 @@
 <section data-ng-controller="MessageController">
 	<div class='new-message'>
+		<span ng-if='sended'>Сообщение отправлено.</span>
+		<br>
   	<input data-ng-model='message'>
 		<br>
 		<button ng-click='sendMessage()'>Отправить сообщение</button>
