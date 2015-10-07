@@ -1,5 +1,11 @@
 <section data-ng-controller="HomeController">
 	<h1>{{ helloMessage }}</h1>
+	<div ng-if='authentication.user.messages'>
+	<h2>Ваши сообщения: </h2>
+	<ul>
+		<li ng-repeat='message in authentication.user.messages'>{{ message }}</li>
+	</ul>
+  </div>
 	<div ng-repeat='user in users'>
 		<a ng-href="#!/message/{{ user._id }}"><h3>{{ user.displayName }}</h3></a>
 	</div>
