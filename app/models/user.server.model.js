@@ -37,7 +37,7 @@ var UserSchema = new Schema({
 		default: '',
 		validate: [validateLocalStrategyProperty, 'Please fill in your last name']
 	},
-	messages: [{ text: String, from: String }],
+	messages: [],
 	displayName: {
 		type: String,
 		trim: true

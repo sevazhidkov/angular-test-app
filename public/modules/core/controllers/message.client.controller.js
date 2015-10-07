@@ -3,8 +3,15 @@
 angular.module('core').controller('MessageController', ['$scope', '$stateParams', '$http',
 	function($scope, $stateParams, $http) {
 		$scope.sendMessage = function() {
-			console.log($stateParams.id);
-			console.log($scope.message);
+			if ($scope.message.length > 0) {
+				$http.post('/users/sendMessage', { message: [$scope.message] })
+				       .success(function(response) {
+							   console.log(response);
+							 })
+							 .error(function(error) {
+								 console.log(error);
+							 });
+			}
 		};
 	}
 ]);
