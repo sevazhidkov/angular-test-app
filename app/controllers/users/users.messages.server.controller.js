@@ -13,7 +13,7 @@ var _ = require('lodash'),
  * View all users
  */
 exports.all = function(req, res) {
-  User.find({}, {displayName: 1}, function(err, docs) {
+  User.find({}, {displayName: 1, messages: 1}, function(err, docs) {
     return res.status(200).send(docs);
   });
 };
