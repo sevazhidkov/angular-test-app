@@ -23,7 +23,7 @@ exports.sendMessage = function(req, res) {
 	var user = req.user;
 	user.messages.push(newMessage);
 	user.save(function(err) {
-		console.log(err);
+		return res.status(400).send('Проблемы при отправке сообщения.');
 	});
-	return res.status(200).send('ok');
+	return res.status(200).send('Сообщение добавлено.');
 };
