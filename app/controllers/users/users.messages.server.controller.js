@@ -20,10 +20,8 @@ exports.all = function(req, res) {
 
 exports.sendMessage = function(req, res) {
 	var newMessage = {text: req.body.message[0], from: req.user.displayName};
-	console.log(newMessage);
 	var user = req.user;
 	user.messages.push(newMessage);
-	console.log(user);
 	user.save(function(err) {
 		console.log(err);
 	});
