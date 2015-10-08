@@ -19,11 +19,10 @@ exports.all = function(req, res) {
 };
 
 exports.sendMessage = function(req, res) {
-	var newMessage = {text: req.body.message[0], from: req.user.displayName};
-	var user = req.user;
-	user.messages.push(newMessage);
-	user.save(function(err) {
-		return res.status(400).send('Проблемы при отправке сообщения.');
-	});
-	return res.status(200).send('Сообщение добавлено.');
+	var newMessage = {text: req.body.message, from: req.user.displayName};
+	User.findOne({_id: req.body.id}, function(err, doc) {
+    doc.messages.push(newMessage);
+		doc.save();
+  });
+	return res.status(200);
 };

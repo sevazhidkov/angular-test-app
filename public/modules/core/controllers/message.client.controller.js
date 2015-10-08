@@ -4,7 +4,7 @@ angular.module('core').controller('MessageController', ['$scope', '$stateParams'
 	function($scope, $stateParams, $http) {
 		$scope.sendMessage = function() {
 			if ($scope.message.length > 0) {
-				$http.post('/users/sendMessage', { message: [$scope.message] })
+				$http.post('/users/sendMessage', { message: $scope.message, id: $stateParams.id })
 				       .success(function(response) {
 							   $scope.sended = true;
 							 })
@@ -13,5 +13,4 @@ angular.module('core').controller('MessageController', ['$scope', '$stateParams'
 							 });
 			}
 		};
-	}
-]);
+	}]);
