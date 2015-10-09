@@ -24,5 +24,5 @@ exports.sendMessage = function(req, res) {
     doc.messages.push(newMessage);
 		doc.save();
   });
-	return res.status(200);
+	return res.status(200).send('Message sent');
 };
